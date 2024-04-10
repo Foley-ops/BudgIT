@@ -11,7 +11,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.budgit.databinding.ActivityMainBinding;
-
+//This is just a test comment - Joe
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
