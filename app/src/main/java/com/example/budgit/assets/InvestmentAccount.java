@@ -2,7 +2,7 @@ package com.example.budgit.assets;
 
 import java.util.ArrayList;
 
-public class InvestmentAccount extends Asset {
+public class InvestmentAccount {
     private String brokerage;
     private ArrayList<Security> portfolio;
 
