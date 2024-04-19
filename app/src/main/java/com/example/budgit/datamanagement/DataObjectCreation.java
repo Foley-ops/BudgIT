@@ -28,9 +28,10 @@ enum LiabilityType{
 public class DataObjectCreation {
     private DataObjectCreation(){};
 
-    public static Expense createExpense(int id, String name, double cost, int day, int month, ExpenseType expenseType){
+    public static Expense createExpense(int id, double cost, int day, int month, String name, ExpenseType expenseType){
         switch (expenseType){
             case DEFAULT:
+                ExpenseManagement.createExpense(id, cost, day, month, name);
                 break;
         }
         return null;
