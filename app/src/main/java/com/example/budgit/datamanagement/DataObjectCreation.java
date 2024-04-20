@@ -4,7 +4,9 @@ import com.example.budgit.assets.Asset;
 import com.example.budgit.assets.Condition;
 import com.example.budgit.expenses.*;
 import com.example.budgit.liabilities.*;
-
+/*
+NOTE THIS CLASS IS PROBABLY REDUNDANT SINCE ALL FUNCTIONS CAN BE CALLED FROM THE MAIN ACTIVITIES ANYWAY
+*/
 public class DataObjectCreation {
     private DataObjectCreation(){};
 
