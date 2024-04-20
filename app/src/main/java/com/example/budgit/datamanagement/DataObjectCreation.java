@@ -1,29 +1,9 @@
 package com.example.budgit.datamanagement;
 
 import com.example.budgit.assets.Asset;
+import com.example.budgit.assets.Condition;
 import com.example.budgit.expenses.*;
 import com.example.budgit.liabilities.*;
-
-enum ExpenseType {
-    DEFAULT
-}
-
-enum AssetType{
-    DEFAULT,
-    CAR,
-    INVESTMENTACCONT,
-    PROPERTY,
-    SAVINGSACCOUNT,
-}
-
-enum LiabilityType{
-    DEFAULT,
-    CARNOTE,
-    CREDITCARD,
-    MORTGAGE,
-    PERSONALOAN,
-    STUDENTLOAN
-}
 
 public class DataObjectCreation {
     private DataObjectCreation(){};
@@ -31,24 +11,32 @@ public class DataObjectCreation {
     public static Expense createExpense(int id, double cost, int day, int month, String name, ExpenseType expenseType){
         switch (expenseType){
             case DEFAULT:
-                ExpenseManagement.createExpense(id, cost, day, month, name);
-                break;
+                return ExpenseManagement.createExpense(id, cost, day, month, name);
         }
         return null;
     }
 
-    public static Asset createAsset(int id, String name, double value, int day, int month, AssetType assetType){
+    public static Asset createAsset(int id, double value, double interest, String name, AssetType assetType){
         switch (assetType){
             case DEFAULT:
-                break;
+                return AssetManagement.createAsset(id, value, interest, name);
             case CAR:
-                break;
+                String model = ""; //get from UI
+                String make = ""; //get from UI
+                int age = 0; //get from UI
+                int mpg = 0; //get from UI
+                Condition condition = Condition.LIKENEW;
+                return AssetManagement.CreateCar(id, value, interest, name, age, model, make, mpg, condition);
             case INVESTMENTACCONT:
-                break;
+                String bank = ""; //get from UI
+                return AssetManagement.createInvestmentAccount(id, value, interest, name, bank);
             case PROPERTY:
-                break;
+                int ageProp = 0; //get from UI
+                String address = ""; //get from UI
+                return AssetManagement.createProperty(id, value, interest, name, ageProp, address);
             case SAVINGSACCOUNT:
-                break;
+                String bankSavings = ""; //get from UI
+                return AssetManagement.createSavingsAccount(id, value, interest, name, bankSavings);
         }
         return null;
     }
@@ -56,8 +44,7 @@ public class DataObjectCreation {
     public static Liability createLiability(int id, double balance, double interestRate, String name, LiabilityType liabilityType){
         switch (liabilityType){
             case DEFAULT:
-                WriteCache.writeToCache();
-                return new Liability(id, balance, interestRate, name);
+                return LiabilityManagement.createLiability(id, balance, interestRate, name);
             case CARNOTE:
                 int term = 0; //get from UI
                 return LiabilityManagement.createCarNote(id, balance, interestRate, name, term);

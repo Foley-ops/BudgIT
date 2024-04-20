@@ -12,7 +12,9 @@ public class Asset {
         this.interest = interest;
         this.name = name;
     }
-    public Asset(){}
+    public Asset(int id){
+        this.id = id;
+    }
     public int getId() {
         return id;
     }

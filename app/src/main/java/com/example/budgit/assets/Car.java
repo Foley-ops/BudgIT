@@ -1,22 +1,13 @@
 package com.example.budgit.assets;
 
-enum condition{
-    JUNK,
-    BAD,
-    DECENT,
-    GOOD,
-    GREAT,
-    LIKENEW
-}
-
 public class Car extends Asset{
     private int age;
     private String model;
     private String make;
     private double mpg;
-    private condition condition;
+    private Condition condition;
 
-    public Car(int id, double value, double interest, String name, int age, String model, String make, double mpg, condition condition) {
+    public Car(int id, double value, double interest, String name, int age, String model, String make, double mpg, Condition condition) {
         super(id, value, interest, name);
         this.age = age;
         this.model = model;
@@ -25,7 +16,8 @@ public class Car extends Asset{
         this.condition = condition;
     }
 
-    public Car(int age, String model, String make, double mpg, condition condition) {
+    public Car(int id, int age, String model, String make, double mpg, Condition condition) {
+        super(id);
         this.age = age;
         this.model = model;
         this.make = make;
@@ -33,7 +25,9 @@ public class Car extends Asset{
         this.condition = condition;
     }
 
-    public Car(){}
+    public Car(int id){
+        super(id);
+    }
 
     public int getAge() {
         return age;
@@ -67,11 +61,11 @@ public class Car extends Asset{
         this.mpg = mpg;
     }
 
-    public condition getCondition() {
+    public Condition getCondition() {
         return condition;
     }
 
-    public void setCondition(condition condition) {
+    public void setCondition(Condition condition) {
         this.condition = condition;
     }
 }

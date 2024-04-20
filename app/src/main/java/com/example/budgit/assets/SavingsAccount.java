@@ -8,11 +8,13 @@ public class SavingsAccount extends Asset{
         this.Bank = bank;
     }
 
-    public SavingsAccount(String bank) {
-        this.Bank = bank;
+    public SavingsAccount(int id, double value, double interest, String name){
+        super(id, value, interest, name);
     }
 
-    public SavingsAccount(){}
+    public SavingsAccount(int id){
+        super(id);
+    }
 
     public String getBank() {
         return Bank;
