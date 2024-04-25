@@ -11,6 +11,8 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class ReadCache extends ComponentActivity {
+
+    public ReadCache(){}
     public String readFromCache(int userID, int itemID, String type){
         String entry;
         String[] lineEntries;

@@ -2,6 +2,7 @@ package com.example.budgit;
 
 import java.util.ArrayList;
 import com.example.budgit.assets.*;
+import com.example.budgit.expenses.Expense;
 import com.example.budgit.liabilities.*;
 import com.example.budgit.transactions.*;
 
@@ -30,6 +31,7 @@ public class userData {
     private ArrayList<Asset> assets;
     private ArrayList<Liability> liabilities;
     private ArrayList<Transaction> transactions;
+    private ArrayList<Expense> expenses;
     private double netWorth;
     private day payDay;
     private payPeriod payPeriod;
@@ -40,6 +42,14 @@ public class userData {
         this.assets = new ArrayList<Asset>();
         this.liabilities = new ArrayList<Liability>();
         this.transactions = new ArrayList<Transaction>();
+        this.expenses = new ArrayList<Expense>();
+    }
+
+    public userData(){
+        this.assets = new ArrayList<Asset>();
+        this.liabilities = new ArrayList<Liability>();
+        this.transactions = new ArrayList<Transaction>();
+        this.expenses = new ArrayList<Expense>();
     }
 
     public String getFirstName() {
@@ -120,5 +130,13 @@ public class userData {
 
     public void setPayPeriod(payPeriod payPeriod){
         this.payPeriod = payPeriod;
+    }
+
+    public Expense getExpenses(int index) {
+        return expenses.get(index);
+    }
+
+    public void setExpense(Expense expense){
+        this.expenses.add(expense);
     }
 }
