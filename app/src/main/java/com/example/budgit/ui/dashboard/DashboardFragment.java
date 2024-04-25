@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -19,6 +20,7 @@ public class DashboardFragment extends Fragment {
     public DashboardFragment(){
         super(R.layout.fragment_dashboard);
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
