@@ -1,5 +1,6 @@
 package com.example.budgit;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -13,9 +14,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.budgit.databinding.ActivityMainBinding;
 //This is just a test comment - Joe
 public class MainActivity extends AppCompatActivity {
-
     private ActivityMainBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
