@@ -6,23 +6,6 @@ import com.example.budgit.expenses.Expense;
 import com.example.budgit.liabilities.*;
 import com.example.budgit.transactions.*;
 
-enum day {
-    MONDAY,
-    TUESDAY,
-    WEDNESDAY,
-    THURSDAY,
-    FRIDAY,
-    SATURDAY,
-    SUNDAY
-}
-
-enum payPeriod {
-    DAILY,
-    WEEKLY,
-    BIWEEKLY,
-    MONTHLY,
-    YEARLY
-}
 public class userData {
     private String firstName;
     private String lastName;
