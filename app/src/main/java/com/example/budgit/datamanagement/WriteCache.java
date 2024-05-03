@@ -20,13 +20,9 @@ public class WriteCache extends ComponentActivity{
 
         if(userFile.exists()){
             try {
-                Scanner scan = new Scanner(userFile);
-                FileWriter writer = new FileWriter(userFile);
-                while (!scan.hasNext()){
-                    if(Objects.equals(scan.nextLine(), "")){
-                        writer.write(line);
-                    }
-                }
+                FileWriter writer = new FileWriter(userFile, true);
+                writer.write("\n" + line);
+                writer.close();
             }
             catch (IOException e){
                 Toast.makeText(this, "ERROR storing data", Toast.LENGTH_SHORT).show();
@@ -58,6 +54,8 @@ public class WriteCache extends ComponentActivity{
                         writer.write("");
                     }
                 }
+
+                writer.close();
             }
             catch(IOException e){
                 Toast.makeText(this, "ERROR deleting data", Toast.LENGTH_SHORT).show();
