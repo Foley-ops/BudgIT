@@ -7,6 +7,24 @@ import com.example.budgit.liabilities.*;
 import com.example.budgit.transactions.*;
 
 public class userData {
+    enum day {
+        MONDAY,
+        TUESDAY,
+        WEDNESDAY,
+        THURSDAY,
+        FRIDAY,
+        SATURDAY,
+        SUNDAY
+    }
+
+    enum payPeriod {
+        DAILY,
+        WEEKLY,
+        BIWEEKLY,
+        MONTHLY,
+        YEARLY
+    }
+
     private String firstName;
     private String lastName;
     private double income;
